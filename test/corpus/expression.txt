@@ -1,0 +1,47 @@
+====================
+integer expression
+====================
+
+{{ 2 }}
+
+---
+
+(template
+  (expression)
+)
+
+====================
+float expression
+====================
+
+{{ 2.123 }}
+
+---
+
+(template
+  (expression)
+)
+
+====================
+string expression
+====================
+
+{{ "string" }}
+
+---
+
+(template
+  (expression)
+)
+
+====================
+bool expression
+====================
+
+{{ True }}
+
+---
+
+(template
+  (expression)
+)

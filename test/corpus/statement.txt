@@ -1,0 +1,31 @@
+====================
+if statement
+====================
+
+{% if llama == "fat" %}
+print("fat")
+{% endif %}
+
+---
+
+(template
+  (statement)
+  (statement)
+)
+
+====================
+for statment
+====================
+
+{% for i in range(10) %}
+print({{ i }})
+{% endfor %}
+
+---
+
+(template
+  (statement)
+  (expression)
+  (statement)
+)
+

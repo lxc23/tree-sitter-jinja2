@@ -1,0 +1,41 @@
+====================
+generic comments
+====================
+
+{# comment #}
+
+---
+
+(template
+  (comment)
+)
+
+====================
+line breaking comments
+====================
+
+{#- comment -#}
+
+---
+
+(template
+  (comment)
+)
+
+====================
+multiple comments
+====================
+
+{#- comment1 -#}
+{#- comment2 #}
+{# comment3 -#}
+{#- comment4 -#}
+
+---
+
+(template
+  (comment)
+  (comment)
+  (comment)
+  (comment)
+)
