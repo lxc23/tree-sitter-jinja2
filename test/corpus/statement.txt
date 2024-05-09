@@ -2,16 +2,27 @@
 if statement
 ====================
 
-{% if llama == "fat" %}
-print("fat")
+{% if llama == "alpaca" %}
+print("what")
 {% endif %}
 
 ---
 
 (template
-  (statement)
-  (statement)
-)
+  (jinja_statement
+    (unary_expression
+      (keyword)
+      (binary_expression
+        (identifier)
+        (operator)
+        (string)
+        )
+      )
+    )
+  (jinja_statement
+    (keyword)
+    )
+  )
 
 ====================
 for statment
@@ -24,8 +35,78 @@ print({{ i }})
 ---
 
 (template
-  (statement)
-  (expression)
-  (statement)
-)
+  (jinja_statement
+    (unary_expression
+      (keyword)
+      (binary_expression
+        (identifier)
+        (operator)
+        (fn_declaration
+          name: (identifier)
+          arguments: (integer)
+          )
+        )
+      )
+    )
+  (jinja_expression
+    (identifier)
+    )
+  (jinja_statement
+    (keyword)
+    )
+  )
 
+====================
+combo statment
+====================
+
+{% for i in range(10) %}
+{% if i % 2 == 0 %}
+if (x == {{ i }})
+  print({{ i }})
+{% endif %}
+{% endfor %}
+
+---
+
+(template
+  (jinja_statement
+    (unary_expression
+      (keyword)
+      (binary_expression
+        (identifier)
+        (operator)
+        (fn_declaration
+          name: (identifier)
+          arguments: (integer)
+          )
+        )
+      )
+    )
+  (jinja_statement
+    (unary_expression
+      (keyword)
+      (binary_expression
+        (binary_expression
+          (identifier)
+          (operator)
+          (integer)
+          )
+          (operator)
+          (integer)
+        )
+      )
+    )
+  (jinja_expression
+    (identifier)
+    )
+  (jinja_expression
+    (identifier)
+    )
+  (jinja_statement
+    (keyword)
+    )
+  (jinja_statement
+    (keyword)
+    )
+)

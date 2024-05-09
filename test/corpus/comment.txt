@@ -7,7 +7,7 @@ generic comments
 ---
 
 (template
-  (comment)
+  (jinja_comment)
 )
 
 ====================
@@ -19,7 +19,7 @@ line breaking comments
 ---
 
 (template
-  (comment)
+  (jinja_comment)
 )
 
 ====================
@@ -34,8 +34,8 @@ multiple comments
 ---
 
 (template
-  (comment)
-  (comment)
-  (comment)
-  (comment)
+  (jinja_comment)
+  (jinja_comment)
+  (jinja_comment)
+  (jinja_comment)
 )

@@ -7,7 +7,8 @@ integer expression
 ---
 
 (template
-  (expression)
+  (jinja_expression
+    (integer))
 )
 
 ====================
@@ -19,7 +20,8 @@ float expression
 ---
 
 (template
-  (expression)
+  (jinja_expression
+    (float))
 )
 
 ====================
@@ -31,7 +33,8 @@ string expression
 ---
 
 (template
-  (expression)
+  (jinja_expression
+    (string))
 )
 
 ====================
@@ -43,5 +46,6 @@ bool expression
 ---
 
 (template
-  (expression)
+  (jinja_expression
+    (boolean))
 )
