@@ -1,0 +1,262 @@
+====================
+Empty expressions
+====================
+
+{{}}
+
+---
+
+(template
+  (jinja_expression)
+  )
+
+====================
+String expressions
+====================
+
+{{ "Hello World" }}
+{{ "Escape \n\r \\ \" \' " }}
+
+---
+
+(template
+  (jinja_expression
+    (string
+      (string_start)
+      (string_content)
+      (string_end)
+      )
+    )
+  (jinja_expression
+    (string
+      (string_start)
+      (string_content
+        (escape_sequence)
+        (escape_sequence)
+        (escape_sequence)
+        (escape_sequence)
+        (escape_sequence)
+        )
+      (string_end)
+      )
+    )
+  )
+
+====================
+Integer expressions
+====================
+
+{{ 42 }}
+{{ 123_456 }}
+
+---
+
+(template
+  (jinja_expression
+    (integer)
+    )
+  (jinja_expression
+    (integer)
+    )
+  )
+
+====================
+Float expressions
+====================
+
+{{ 42.23 }}
+{{ 42.1e2 }}
+{{ 123_456.789}}
+
+---
+
+(template
+  (jinja_expression
+    (float))
+  (jinja_expression
+    (float))
+  (jinja_expression
+    (float))
+)
+
+====================
+List expressions
+====================
+
+{{ ['list', 'of', 'objects'] }}
+
+---
+
+(template
+  (jinja_expression
+    (list
+      (string
+        (string_start)
+        (string_content)
+        (string_end)
+        )
+      (string
+        (string_start)
+        (string_content)
+        (string_end)
+        )
+      (string
+        (string_start)
+        (string_content)
+        (string_end)
+        )
+      )
+    )
+  )
+
+====================
+Tuple expressions
+====================
+
+{{ ('tuple', 'of', 'values') }}
+
+---
+
+(template
+  (jinja_expression
+    (tuple
+      (string
+        (string_start)
+        (string_content)
+        (string_end)
+        )
+      (string
+        (string_start)
+        (string_content)
+        (string_end)
+        )
+      (string
+        (string_start)
+        (string_content)
+        (string_end)
+        )
+      )
+    )
+  )
+
+====================
+Dictionary expressions
+====================
+
+{{ {'dict': 'of', 'key': 'and', 'value': 'pairs'} }}
+
+---
+
+(template
+  (jinja_expression
+    (dictionary
+      (pair
+        key: (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        value: (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        )
+      (pair
+        key: (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        value: (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        )
+      (pair
+        key: (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        value: (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        )
+      )
+    )
+  )
+
+====================
+Boolean expressions
+====================
+
+{{ true }}
+{{ false }}
+
+---
+
+(template
+  (jinja_expression
+    (true))
+  (jinja_expression
+    (false))
+)
+
+====================
+Tilde operations
+====================
+
+{{ "Hello " ~ name ~ "!" }}
+
+---
+
+(template
+  (jinja_expression
+    (binary_operator
+      left: (binary_operator
+        left: (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        right: (identifier)
+        )
+      right: (string
+        (string_start)
+        (string_content)
+        (string_end)
+        )
+      )
+    )
+  )
+
+====================
+Conditional expressions
+====================
+
+{% extends layout_template if layout_template is defined else 'default.html' %}
+
+---
+
+(template
+  (jinja_statement
+    (extends_statement
+      (conditional_expression
+        (identifier)
+        (comparison_operator
+          (identifier)
+          (identifier)
+          )
+        (string
+          (string_start)
+          (string_content)
+          (string_end)
+          )
+        )
+      )
+    )
+  )
