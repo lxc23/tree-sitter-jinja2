@@ -729,6 +729,11 @@
     }
   },
   {
+    "type": "content",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "default_parameter",
     "named": true,
     "fields": {
@@ -1549,6 +1554,10 @@
       "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "content",
+          "named": true
+        },
         {
           "type": "jinja_comment",
           "named": true

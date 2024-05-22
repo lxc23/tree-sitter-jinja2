@@ -8,7 +8,7 @@ Empty statements
 
 (template
   (jinja_statement)
-  )
+  (content))
 
 ====================
 For statements
@@ -24,25 +24,22 @@ For statements
 ---
 
 (template
+  (content)
   (jinja_statement
     (for_statement
         left: (identifier)
-        right: (identifier)
-      )
-    )
+        right: (identifier)))
+  (content)
   (jinja_expression
     (filter
       object: (attribute
           object: (identifier)
-          attribute: (identifier)
-          )
-      filter: (identifier)
-      )
-    )
+          attribute: (identifier))
+      filter: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 For statements w/ filter
@@ -58,34 +55,29 @@ For statements w/ filter
 ---
 
 (template
+  (content)
   (jinja_statement
     (for_statement
       left: (pattern_list
         (identifier)
-        (identifier)
-        )
+        (identifier))
       right: (filter
         object: (identifier)
-        filter: (identifier)
-        )
-      )
-    )
+        filter: (identifier))))
+  (content)
   (jinja_expression
     (filter
       object: (identifier)
-      filter: (identifier)
-      )
-    )
+      filter: (identifier)))
+  (content)
   (jinja_expression
     (filter
       object: (identifier)
-      filter: (identifier)
-      )
-    )
+      filter: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 For statements w/ sequence filter
@@ -106,25 +98,18 @@ For statements w/ sequence filter
         condition: (not_operator
           argument: (attribute
             object: (identifier)
-            attribute: (identifier)
-            )
-          )
-        )
-      )
-    )
+            attribute: (identifier))))))
+  (content)
   (jinja_expression
     (filter
       object: (attribute
         object: (identifier)
-        attribute: (identifier)
-        )
-      filter: (identifier)
-      )
-    )
+        attribute: (identifier))
+      filter: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 For statements w/ recursive
@@ -142,53 +127,44 @@ For statements w/ recursive
 ---
 
 (template
+  (content)
   (jinja_statement
     (for_statement
       left: (identifier)
-      right: (identifier)
-      )
-    )
+      right: (identifier)))
+  (content)
   (jinja_expression
     (filter
       object: (attribute
         object: (identifier)
-        attribute: (identifier)
-        )
-      filter: (identifier)
-      )
-    )
+        attribute: (identifier))
+      filter: (identifier)))
+  (content)
   (jinja_expression
     (attribute
       object: (identifier)
-      attribute: (identifier)
-      )
-    )
+      attribute: (identifier)))
+  (content)
   (jinja_statement
     (if_statement
       condition: (attribute
         object: (identifier)
-        attribute: (identifier)
-        )
-      )
-    )
+        attribute: (identifier))))
+  (content)
   (jinja_expression
     (call
       function: (identifier)
       arguments: (argument_list
         (attribute
           object: (identifier)
-          attribute: (identifier)
-          )
-        )
-      )
-    )
+          attribute: (identifier)))))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
+    (end_statement))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 If statements
@@ -207,31 +183,26 @@ If statements
 (template
   (jinja_statement
     (if_statement
-      condition: (identifier)
-      )
-    )
+      condition: (identifier)))
+  (content)
   (jinja_statement
     (for_statement
       left: (identifier)
-      right: (identifier)
-      )
-    )
+      right: (identifier)))
+  (content)
   (jinja_expression
     (filter
       object: (attribute
         object: (identifier)
-        attribute: (identifier)
-        )
-      filter: (identifier)
-      )
-    )
+        attribute: (identifier))
+      filter: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
+    (end_statement))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 If/Else statements
@@ -252,25 +223,20 @@ If/Else statements
     (if_statement
       condition: (attribute
         object: (identifier)
-        attribute: (identifier)
-        )
-      )
-    )
+        attribute: (identifier))))
+  (content)
   (jinja_statement
     (elif_statement
       condition: (attribute
         object: (identifier)
-        attribute: (identifier)
-        )
-      )
-    )
+        attribute: (identifier))))
+  (content)
   (jinja_statement
-    (else_statement)
-    )
+    (else_statement))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 Macro statements
@@ -296,42 +262,34 @@ Macro statements
           name: (identifier)
           value: (string
             (string_start)
-            (string_end)
-            )
-          )
+            (string_end)))
         (default_parameter
           name: (identifier)
           value: (string
             (string_start)
             (string_content)
-            (string_end)
-            )
-          )
+            (string_end)))
         (default_parameter
           name: (identifier)
-          value: (integer)
-          )
-        )
-      )
-    )
+          value: (integer)))))
+  (content)
   (jinja_expression
-    (identifier)
-    )
+    (identifier))
+  (content)
   (jinja_expression
-    (identifier)
-    )
+    (identifier))
+  (content)
   (jinja_expression
     (filter
       object: (identifier)
-      filter: (identifier)
-      )
-    )
+      filter: (identifier)))
+  (content)
   (jinja_expression
-    (identifier)
-    )
+    (identifier))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
+    (end_statement))
+  (content)
   (jinja_expression
     (call
       function: (identifier)
@@ -339,11 +297,8 @@ Macro statements
         (string
           (string_start)
           (string_content)
-          (string_end)
-          )
-        )
-      )
-    )
+          (string_end)))))
+  (content)
   (jinja_expression
     (call
       function: (identifier)
@@ -351,20 +306,14 @@ Macro statements
         (string
           (string_start)
           (string_content)
-          (string_end)
-          )
+          (string_end))
         (keyword_argument
           name: (identifier)
           value: (string
             (string_start)
             (string_content)
-            (string_end)
-            )
-          )
-        )
-      )
-    )
-  )
+            (string_end))))))
+  (content))
 
 ====================
 Call statements
@@ -385,35 +334,27 @@ Call statements
   (jinja_statement
     (call_statement
       parameters: (parameters
-        (identifier)
-        )
+        (identifier))
       callable: (call
         function: (identifier)
         arguments: (argument_list
-          (identifier)
-          )
-        )
-      )
-    )
+          (identifier)))))
+  (content)
   (jinja_expression
     (filter
       object: (attribute
         object: (identifier)
-        attribute: (identifier)
-        )
-      filter: (identifier)
-      )
-    )
+        attribute: (identifier))
+      filter: (identifier)))
+  (content)
   (jinja_expression
     (attribute
       object: (identifier)
-      attribute: (identifier)
-      )
-    )
+      attribute: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 Filter statements
@@ -430,25 +371,20 @@ Filter statements
 (template
   (jinja_statement
     (filter_statement
-      filter: (identifier))
-    )
+      filter: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
+    (end_statement))
   (jinja_statement
     (filter_statement
       filter: (call
         function: (identifier)
         arguments: (argument_list
-          (integer)
-          )
-        )
-      )
-    )
+          (integer)))))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 Assignment statements
@@ -469,45 +405,30 @@ Assignment statements
             (string
               (string_start)
               (string_content)
-              (string_end)
-              )
+              (string_end))
             (string
               (string_start)
               (string_content)
-              (string_end)
-              )
-            )
+              (string_end)))
           (tuple
             (string
               (string_start)
               (string_content)
-              (string_end)
-              )
+              (string_end))
             (string
               (string_start)
               (string_content)
-              (string_end)
-              )
-            )
-          )
-        )
-      )
-    )
+              (string_end)))))))
   (jinja_statement
     (set_statement
       assignment: (assignment
         left: (pattern_list
           (identifier)
-          (identifier)
-          )
+          (identifier))
         right: (call
           function: (identifier)
-          arguments: (argument_list)
-          )
-        )
-      )
-    )
-  )
+          arguments: (argument_list)))))
+  (content))
 
 ====================
 Assignment statements
@@ -528,27 +449,21 @@ Assignment statements
 (template
   (jinja_statement
     (set_statement
-      assignment: (identifier)
-      )
-    )
+      assignment: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
+    (end_statement))
   (jinja_statement
     (set_statement
       assignment: (filter
         object: (identifier)
-        filter: (identifier)
-        )
-      )
-    )
+        filter: (identifier))))
+  (content)
   (jinja_expression
-    (identifier)
-    )
+    (identifier))
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 Block assignment statements
@@ -577,41 +492,30 @@ Block assignment statements
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
+        (string_end))))
   (jinja_statement
     (block_statement
-      name: (identifier)
-      )
-    )
+      name: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
+    (end_statement))
   (jinja_statement
     (block_statement
-      name: (identifier)
-      )
-    )
+      name: (identifier)))
   (jinja_expression
     (call
       function: (identifier)
-      arguments: (argument_list)
-      )
-    )
+      arguments: (argument_list)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
+    (end_statement))
   (jinja_statement
     (block_statement
-      name: (identifier)
-      )
-    )
+      name: (identifier)))
+  (content)
   (jinja_statement
-    (end_statement)
-    )
-  )
+    (end_statement))
+  (content))
 
 ====================
 Include statements
@@ -631,47 +535,32 @@ Include statements
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
+        (string_end))))
   (jinja_statement
     (include_statement
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
+        (string_end))))
   (jinja_statement
     (include_statement
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
+        (string_end))))
   (jinja_statement
     (include_statement
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
+        (string_end))))
   (jinja_statement
     (include_statement
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
-  )
+        (string_end))))
+  (content))
 
 
 ====================
@@ -690,24 +579,16 @@ Import statements
         name: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
-        alias: (identifier)
-        )
-      )
-    )
+          (string_end))
+        alias: (identifier))))
   (jinja_statement
     (import_from_statement
       module_name: (string
         (string_start)
         (string_content)
-        (string_end)
-        )
+        (string_end))
       name: (aliased_import
         name: (identifier)
-        alias: (identifier)
-        )
-      name: (identifier)
-      )
-    )
-  )
+        alias: (identifier))
+      name: (identifier)))
+  (content))

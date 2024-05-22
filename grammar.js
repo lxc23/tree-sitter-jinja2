@@ -68,12 +68,17 @@ module.exports = grammar({
   rules: {
     template: ($) =>
       repeat(
-        choice($.jinja_statement, $.jinja_expression, $.jinja_comment, $._text),
+        choice(
+          $.jinja_statement,
+          $.jinja_expression,
+          $.jinja_comment,
+          $.content,
+        ),
       ),
 
     // Jinja2 statements
     jinja_statement: ($) =>
-      prec(23, seq(/\{%-?/, optional($._statement), /-?%\}/)),
+      prec(23, seq(/\{%[-+]?/, optional($._statement), /[-+]?%\}/)),
 
     // Jinja2 expressions
     jinja_expression: ($) =>
@@ -658,7 +663,7 @@ module.exports = grammar({
     positional_separtor: (_) => "/",
     keyword_separator: (_) => "*",
 
-    _text: (_) => prec.right(repeat1(/[^{]+|\{/)),
+    content: (_) => prec.right(repeat1(/[^{]+|\{/)),
   },
 });
 

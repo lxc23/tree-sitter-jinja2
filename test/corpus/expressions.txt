@@ -8,7 +8,7 @@ Empty expressions
 
 (template
   (jinja_expression)
-  )
+  (content))
 
 ====================
 String expressions
@@ -24,9 +24,7 @@ String expressions
     (string
       (string_start)
       (string_content)
-      (string_end)
-      )
-    )
+      (string_end)))
   (jinja_expression
     (string
       (string_start)
@@ -35,12 +33,9 @@ String expressions
         (escape_sequence)
         (escape_sequence)
         (escape_sequence)
-        (escape_sequence)
-        )
-      (string_end)
-      )
-    )
-  )
+        (escape_sequence))
+      (string_end)))
+  (content))
 
 ====================
 Integer expressions
@@ -53,12 +48,10 @@ Integer expressions
 
 (template
   (jinja_expression
-    (integer)
-    )
+    (integer))
   (jinja_expression
-    (integer)
-    )
-  )
+    (integer))
+  (content))
 
 ====================
 Float expressions
@@ -77,7 +70,7 @@ Float expressions
     (float))
   (jinja_expression
     (float))
-)
+  (content))
 
 ====================
 List expressions
@@ -93,21 +86,16 @@ List expressions
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
+        (string_end))
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
+        (string_end))
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
-  )
+        (string_end))))
+  (content))
 
 ====================
 Tuple expressions
@@ -123,21 +111,16 @@ Tuple expressions
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
+        (string_end))
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
+        (string_end))
       (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
-  )
+        (string_end))))
+  (content))
 
 ====================
 Dictionary expressions
@@ -154,41 +137,30 @@ Dictionary expressions
         key: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
+          (string_end))
         value: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
-        )
+          (string_end)))
       (pair
         key: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
+          (string_end))
         value: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
-        )
+          (string_end)))
       (pair
         key: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
+          (string_end))
         value: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
-        )
-      )
-    )
-  )
+          (string_end)))))
+  (content))
 
 ====================
 Boolean expressions
@@ -204,7 +176,7 @@ Boolean expressions
     (true))
   (jinja_expression
     (false))
-)
+  (content))
 
 ====================
 Tilde operations
@@ -221,18 +193,13 @@ Tilde operations
         left: (string
           (string_start)
           (string_content)
-          (string_end)
-          )
-        right: (identifier)
-        )
+          (string_end))
+        right: (identifier))
       right: (string
         (string_start)
         (string_content)
-        (string_end)
-        )
-      )
-    )
-  )
+        (string_end))))
+  (content))
 
 ====================
 Conditional expressions
@@ -249,14 +216,9 @@ Conditional expressions
         (identifier)
         (comparison_operator
           (identifier)
-          (identifier)
-          )
+          (identifier))
         (string
           (string_start)
           (string_content)
-          (string_end)
-          )
-        )
-      )
-    )
-  )
+          (string_end)))))
+  (content))

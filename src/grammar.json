@@ -21,7 +21,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "_text"
+            "name": "content"
           }
         ]
       }
@@ -3393,7 +3393,7 @@
       "type": "STRING",
       "value": "*"
     },
-    "_text": {
+    "content": {
       "type": "PREC_RIGHT",
       "value": 0,
       "content": {
